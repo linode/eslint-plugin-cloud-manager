@@ -25,11 +25,11 @@ and reload your eslint server.
 ## Development
 
 ```bash
-yarn install
+bun install
 ```
 
 ### Testing
 
 ```bash
-yarn test
+bun run test
 ```
