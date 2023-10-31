@@ -77,15 +77,27 @@ export const noCustomFontWeight: Rule.RuleModule = {
             if (
               (attribute?.name?.name === 'sx' ||
                 attribute.name.name === 'style') &&
-              attribute.value?.type === 'JSXExpressionContainer' &&
-              attribute.value.expression?.type === 'ObjectExpression'
+              attribute.value?.type === 'JSXExpressionContainer'
             ) {
-              checkCssPropertyRecursively({
-                css,
-                properties: attribute.value.expression.properties,
-                context,
-                message: ERROR_MESSAGE,
-              });
+              const expression = attribute.value.expression;
+
+              if (expression.type === 'ObjectExpression') {
+                checkCssPropertyRecursively({
+                  css,
+                  properties: expression.properties,
+                  context,
+                  message: ERROR_MESSAGE,
+                });
+              } else if (expression.type === 'ArrowFunctionExpression') {
+                if (expression.body.type === 'ObjectExpression') {
+                  checkCssPropertyRecursively({
+                    css,
+                    properties: expression.body.properties,
+                    context,
+                    message: ERROR_MESSAGE,
+                  });
+                }
+              }
             }
 
             // Any component with a fontWeight prop
