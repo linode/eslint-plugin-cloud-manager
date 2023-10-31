@@ -1,6 +1,6 @@
 {
   "name": "@linode/eslint-plugin-cloud-manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Alban Bailly",
   "private": false,
   "license": "Apache-2.0",
@@ -25,8 +25,8 @@
   "bugs": {
     "url": "https://github.com/linode/eslint-plugin-cloud-manager/issues"
   },
-  "dependencies": {
-    "eslint": "^8.52.0"
+  "peerDependencies": {
+    "eslint": "^6.8.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.44.6",
