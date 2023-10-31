@@ -8,16 +8,22 @@ Custom ESLint rules for Akamai's Cloud Manager. Enforces specific styling guidel
 
 ## Installation
 
-You can install this package using yarn or npm
+You can install this package using yarn, npm, bun, or pnpm.
+
+```bash
+npm install @linode/eslint-plugin-cloud-manager --save-dev
+```
 
 ```bash
 yarn add -D @linode/eslint-plugin-cloud-manager
 ```
 
-or
+```bash
+bun add -D @linode/eslint-plugin-cloud-manager
+```
 
 ```bash
-npm install @linode/eslint-plugin-cloud-manager --save-dev
+pnpm add -D @linode/eslint-plugin-cloud-manager
 ```
 
 and reload your eslint server.
