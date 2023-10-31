@@ -1,5 +1,7 @@
 import { checkCssPropertyRecursively } from '../utils/checkCssPropertyRecursively';
 
+import { describe, it, beforeEach, vi, expect } from 'vitest';
+
 import type { Rule } from 'eslint';
 
 describe('checkCssPropertyRecursively', () => {
@@ -7,7 +9,7 @@ describe('checkCssPropertyRecursively', () => {
 
   beforeEach(() => {
     context = {
-      report: jest.fn(),
+      report: vi.fn(),
     } as unknown as Rule.RuleContext;
   });
 
