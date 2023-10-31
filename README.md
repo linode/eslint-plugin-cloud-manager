@@ -1,5 +1,7 @@
 # @linode/eslint-plugin-cloud-manager
 
+This software is Copyright Akamai Technologies, Inc.
+
 ![npm](https://img.shields.io/npm/v/@linode/eslint-plugin-cloud-manager)
 
 ## Description
