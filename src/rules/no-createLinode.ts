@@ -12,7 +12,7 @@ export const noCreateLinode: Rule.RuleModule = {
     category: 'Best Practices',
     recommended: false,
     description:
-    'Disallow the use of createLinode. This rule should be applied only within test files, but the scope of the rule cannot be defined within the rule itself.', 
+    'Disallow the use of createLinode. This rule should be applied only within test files.', 
     },
     messages: {
         createLinodeUsage: `Unsafe to use createLinode method directly within test files. Please use createTestLinode method instead.` 
@@ -20,7 +20,7 @@ export const noCreateLinode: Rule.RuleModule = {
     }
   },
   create: function(context) {
-    var CREATE_LINODE_FUNCTION_NAME = 'createLinode';
+    const CREATE_LINODE_FUNCTION_NAME = 'createLinode';
     return {
     // CallExpression is any function call, whether foo.bar() or just bar()
     // fn is flagged when it is called, not when it is imported into module
