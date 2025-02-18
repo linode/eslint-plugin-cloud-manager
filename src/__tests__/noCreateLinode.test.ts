@@ -4,7 +4,11 @@ import { RuleTester } from 'eslint';
 
 describe('noCreateLinode', () => { 
     it('should flag usage of createLinode', () => {
-        const ruleTester = new RuleTester()  
+        const ruleTester = new RuleTester({  
+            "env": { 
+                "es6": true
+            } 
+        })  
         ruleTester.run('no-createLinode', noCreateLinode, {
             // catches direct call of fn but not indirect usage or any variable of that name
             valid: [
@@ -23,7 +27,7 @@ describe('noCreateLinode', () => {
                     errors: [{ messageId: 'createLinodeUsage' }],
                 },
                 {
-                    code: 'const linode = await createLinode(resolvedCreatePayload);',
+                    code: 'const linode = createLinode(resolvedCreatePayload);',
                     errors: [{ messageId: 'createLinodeUsage' }],
                 },
             ],
