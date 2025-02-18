@@ -1,6 +1,6 @@
 {
   "name": "@linode/eslint-plugin-cloud-manager",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Alban Bailly",
   "private": false,
   "license": "Apache-2.0",
