@@ -1,6 +1,6 @@
 import { checkCssPropertyRecursively } from '../utils/checkCssPropertyRecursively';
 
-import { describe, it, beforeEach, vi, expect } from 'vitest';
+import { describe, it, beforeEach, mock, expect } from 'bun:test';
 
 import type { Rule } from 'eslint';
 
@@ -9,7 +9,7 @@ describe('checkCssPropertyRecursively', () => {
 
   beforeEach(() => {
     context = {
-      report: vi.fn(),
+      report: mock(() => {}),
     } as unknown as Rule.RuleContext;
   });
 

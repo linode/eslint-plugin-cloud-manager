@@ -1,4 +1,4 @@
-import { describe, it, beforeEach, vi, expect } from 'vitest';
+import { describe, it, beforeEach, mock, expect } from 'bun:test';
 import type { Rule } from 'eslint';
 
 import { noThemeSpacingMethod } from '../rules/no-mui-theme-spacing';
@@ -10,7 +10,7 @@ describe('noThemeSpacingMethod', () => {
 
     beforeEach(() => {
       context = {
-        report: vi.fn(),
+        report: mock(() => {}),
       } as unknown as Rule.RuleContext;
 
       // Get the call expression handler from the rule
