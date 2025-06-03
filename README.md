@@ -32,6 +32,10 @@ and reload your eslint server.
 
 ## Development
 
+This repo uses [Bun](https://bun.sh/) for package management and testing.
+
+### Dependencies
+
 ```bash
 bun install
 ```
@@ -39,5 +43,5 @@ bun install
 ### Testing
 
 ```bash
-bun run test
+bun test
 ```
